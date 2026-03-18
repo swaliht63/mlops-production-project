@@ -23,6 +23,9 @@ jobs:
         pip install -r requirements.txt
         pip install httpx
 
+    - name: Set PYTHONPATH
+      run: echo "PYTHONPATH=$PWD" >> $GITHUB_ENV
+
     - name: Train & Register Model
       run: python model/train.py
 
